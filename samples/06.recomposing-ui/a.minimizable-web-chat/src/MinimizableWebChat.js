@@ -48,10 +48,10 @@ const MinimizableWebChat = () => {
 
   const handleFetchToken = useCallback(async () => {
     if (!token) {
-      const res = await fetch('https://webchat-mockbot.azurewebsites.net/directline/token', { method: 'POST' });
-      const { token } = await res.json();
+      //const res = await fetch('https://webchat-mockbot.azurewebsites.net/directline/token', { method: 'POST' });
+      //const { token } = await res.json();
 
-      setToken(token);
+      setToken('ET1eTs5Lt3E.6IRGoDMbspOsDeheMSxrqrGtOcxLCQ-xJisMS0VSmxw');
     }
   }, [setToken, token]);
 
