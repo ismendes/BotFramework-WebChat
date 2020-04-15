@@ -48,10 +48,15 @@ const MinimizableWebChat = () => {
 
   const handleFetchToken = useCallback(async () => {
     if (!token) {
-      //const res = await fetch('https://webchat-mockbot.azurewebsites.net/directline/token', { method: 'POST' });
-      //const { token } = await res.json();
+        const res = await fetch('https://directline.botframework.com/v3/directline/tokens/generate', {
+            method: 'POST',
+            headers: new Headers({
+                'Authorization': 'Bearer ET1eTs5Lt3E.6IRGoDMbspOsDeheMSxrqrGtOcxLCQ-xJisMS0VSmxw'
+            })
+        });
+      const { token } = await res.json();
 
-      setToken('ET1eTs5Lt3E.6IRGoDMbspOsDeheMSxrqrGtOcxLCQ-xJisMS0VSmxw');
+      setToken(token);
     }
   }, [setToken, token]);
 
